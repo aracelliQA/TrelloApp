@@ -23,21 +23,24 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.add('NewBoard', () => { 
-    cy.visit('http://localhost:3000/')
+Cypress.Commands.add('NewBoard', (boardname) => { 
+    cy.visit('/')
     cy
         .get('[data-cy="create-board"]')
         .click()
     cy
         .get('[data-cy="new-board-input"]')
-        .type('New Board {enter}')
+        .type(boardname)
+    cy
+        .get('[data-cy="new-board-create"]')
+        .click()
    
 })
 
-Cypress.Commands.add('NewList', (name) =>{
+Cypress.Commands.add('NewList', (listname) =>{
     cy
         .get('[data-cy="add-list"]')
-        .type(name)
+        .type(listname)
     cy
         .get('[data-cy="save"]')
         .click()
