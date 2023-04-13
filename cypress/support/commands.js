@@ -62,6 +62,27 @@ Cypress.Commands.add('AddingTasks', (list,element) =>{
         .click()
 })
 
+Cypress.Commands.add('Login', () => {
+    cy.visit('/')
+    cy 
+        .get('[data-cy="login-menu"]')
+        .click()
+
+    cy
+      .get('[data-cy="login-email"]')
+      .type('filip@example.com')
+
+    cy
+      .get('[data-cy="login-password"]')
+      .type('Asdf.1234#')
+
+    cy
+      .get('[data-cy="login"]')
+      .click()
+
+    })
+
+
 Cypress.Commands.add('DeleteBoard', () =>{
     cy
         .get('[data-cy="board-options"] > .options > path')
