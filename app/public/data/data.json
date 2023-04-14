@@ -1,9 +1,9 @@
 {
   "boards": [
     {
-      "name": "new board",
+      "name": "board created by .request() command",
       "user": 0,
-      "id": 41242940414,
+      "id": 71346908924,
       "starred": false,
       "created": "2023-04-13"
     }
