@@ -1,13 +1,17 @@
+/// <reference types="cypress" />
+
 it('Stubbing response', () => {
 
-    cy
+  cy
     .intercept({
       method: 'GET',
-      url: '/api/boards',
-      fixture: 'threeBoards.json'
-    }).as('boardList')
-  
-    cy
-      .visit('/')
-  
-  });
+      url: '/api/boards',},
+      {
+      fixture: 'threeBoards'
+      }
+    ).as('boardList')
+
+  cy
+    .visit('/')
+
+});
