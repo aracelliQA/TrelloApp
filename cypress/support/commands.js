@@ -91,3 +91,8 @@ Cypress.Commands.add('DeleteBoard', () =>{
         .get('[data-cy="board-options"] > #myDropdown > .delete')
         .click()
 })
+
+Cypress.Commands.add('take', (input) => {
+    cy
+      .get(`[data-cy=${input}]`)
+  })
